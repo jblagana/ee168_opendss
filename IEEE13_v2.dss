@@ -100,9 +100,9 @@ new line.Line692_675 geometry=config606 length=500 units=ft
 
 
 !TRANSFORMER
-new transformer.T1 xhl=8
-~ wdg=1 bus=Bus2 conn=delta kV=115 kVA=5000 %r=0.5
-~ wdg=2 bus=Bus3 conn=wye kV=4.16 kVA=5000 %r=0.5
+~ wdg=1 bus=Bus633 conn=wye kV=4.16 kVA=500 %r=0.55
+~ wdg=2 bus=Bus634 conn=wye kV=0.48 kVA=500 %r=0.55
+
 
 new load.Load634a phases=3 bus1=Bus634.1 conn=wye kV=4.16
 ~ kW=160 kvar=110 model=1
