@@ -20,24 +20,24 @@ new wiredata.1/0_AA Runits=mi Rac=0.97
 ~ GMRunits=ft GMRac=0.0111
 ~ Radunits=in Diam=0.368
 
-!Conductor data
-new CNData.250000_AA_CN
-~ Runits=kft Radunits=in GMRunits=in //Units of measure
-~ InsLayer=0.220 DiaIns=1.06 DiaCable=1.16 epsR=2.3 !Cable
-~ Rac=0.076705 GMRac=0.20568 diam=0.573 !Phase Conductor
-~ Rstrand=2.816666667 GMRstrand=0.02496 DiaStrand=0.064 k=13 !Neutral
+// !Conductor data
+// new CNData.250000_AA_CN
+// ~ Runits=kft Radunits=in GMRunits=in //Units of measure
+// ~ InsLayer=0.220 DiaIns=1.06 DiaCable=1.16 epsR=2.3 !Cable
+// ~ Rac=0.076705 GMRac=0.20568 diam=0.573 !Phase Conductor
+// ~ Rstrand=2.816666667 GMRstrand=0.02496 DiaStrand=0.064 k=13 !Neutral
 
-// ! 606 using Z matrix
-// new linecode.config606 nphases=3 units=mi
-// ~ Rmatrix = [0.7982     | 0.3192    0.7891| 0.2849  0.3192  0.7982]
-// ~ Xmatrix = [0.4463     | 0.0328    0.4041| -0.0143 0.0328  0.4463]
-// ~ Cmatrix = [96.8897    | 0        96.8897| 0      0       96.8897]
+! 606 using Z matrix
+new linecode.config606 nphases=3 units=mi
+~ Rmatrix = [0.7982     | 0.3192    0.7891| 0.2849  0.3192  0.7982]
+~ Xmatrix = [0.4463     | 0.0328    0.4041| -0.0143 0.0328  0.4463]
+~ Cmatrix = [96.8897    | 0        96.8897| 0      0       96.8897]
 
-// ! 607 using Z matrix
-// new linecode.config607 nphases=3 units=mi
-// ~ Rmatrix = [1.3425     | 0    0| 0  0  0]
-// ~ Xmatrix = [0.5124     | 0    0| 0  0  0]
-// ~ Cmatrix = [88.9912    | 0    0| 0  0  0]
+! 607 using Z matrix
+new linecode.config607 nphases=3 units=mi
+~ Rmatrix = [1.3425     | 0    0| 0  0  0]
+~ Xmatrix = [0.5124     | 0    0| 0  0  0]
+~ Cmatrix = [88.9912    | 0    0| 0  0  0]
 
 !Line Geometries (1A, 2B, 3C)
 new linegeometry.config601 nconds=4 nphases=3 reduce=yes
