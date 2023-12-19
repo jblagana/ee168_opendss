@@ -66,14 +66,14 @@ new linegeometry.config605 nconds=2 nphases=1 reduce=yes
 ~ cond=1 wire=1/0 units=ft x=0 h=29
 ~ cond=2 wire=1/0 units=ft x=0.5 h=24
 
-new linegeometry.config606 nconds=2 nphases=1 reduce=yes
-~ cond=1 wire=1/0 units=ft x=0 h=29
-~ cond=2 wire=1/0 units=ft x=0.5 h=24
+// new linegeometry.config606 nconds=2 nphases=1 reduce=yes
+// ~ cond=1 wire=1/0 units=ft x=0 h=29
+// ~ cond=2 wire=1/0 units=ft x=0.5 h=24
 
-new linegeometry.config606 nconds=3 nphases=3 reduce=no
-~ cond=1 wire=1/0 units=ft x=0 h=-4
-~ cond=2 wire=1/0 units=ft x=0.5 h=-4
-~ cond=3 wire=1/0 units=ft x=1 h=-4
+// new linegeometry.config606 nconds=3 nphases=3 reduce=no
+// ~ cond=1 wire=1/0 units=ft x=0 h=-4
+// ~ cond=2 wire=1/0 units=ft x=0.5 h=-4
+// ~ cond=3 wire=1/0 units=ft x=1 h=-4
 
 
 !Lines
