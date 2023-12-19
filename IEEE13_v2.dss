@@ -85,18 +85,18 @@ new line.Line645_646 geometry=config603 length=300 units=ft
 ~ bus1=Bus645 bus2=Bus646
 new line.Line650_632 geometry=config601 length=2000 units=ft
 ~ bus1=SourceBus bus2=Bus632
-! new line.Line684_652 geometry=config607 length=800 units=ft
-! ~ bus1=Bus684 bus2=Bus652
+new line.Line684_652 geometry=config607 length=800 units=ft
+~ bus1=Bus684 bus2=Bus652
 new line.Line632_671 geometry=config601 length=2000 units=ft
 ~ bus1=Bus632 bus2=Bus671
 new line.Line671_684 geometry=config604 length=300 units=ft
 ~ bus1=Bus671 bus2=Bus684
 new line.Line671_680 geometry=config601 length=1000 units=ft
 ~ bus1=Bus671 bus2=Bus680
-new line.Line684_611 geometry=config604 length=300 units=ft
-~ bus1=Bus671 bus2=Bus684
-! new line.Line684_611 geometry=config604 length=300 units=ft
-! ~ bus1=Bus671 bus2=Bus684
+new line.Line684_611 geometry=config605 length=300 units=ft
+~ bus1=Bus684 bus2=Bus611
+new line.Line692_675 geometry=config606 length=500 units=ft
+~ bus1=Bus692 bus2=Bus675
 
 
 !TRANSFORMER
