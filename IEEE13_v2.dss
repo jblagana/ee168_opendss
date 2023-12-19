@@ -100,6 +100,7 @@ new line.Line692_675 geometry=config606 length=500 units=ft
 
 
 !TRANSFORMER
+new transformer.T1 xhl=2
 ~ wdg=1 bus=Bus633 conn=wye kV=4.16 kVA=500 %r=0.55
 ~ wdg=2 bus=Bus634 conn=wye kV=0.48 kVA=500 %r=0.55
 
