@@ -1,0 +1,57 @@
+clear
+new circuit.IEEE13BusYYBalanced basekV=12.47 phases=3
+~ MVAsc3 = 250000 250000
+
+new wiredata.phaseconductor Runits=mi Rac=0.306
+~ GMRunits=ft GMRac=0.0244 Radunits=in Diam=0.721
+
+new wiredata.neutralconductor Runits=mi Rac=0.592
+~ GMRunits=ft GMRac=0.00814 Radunits=in Diam=0.563
+
+new linegeometry.FourWire nconds=4 nphases=3 reduce=yes 
+~ cond=1 wire=phaseconductor units=ft x=-4 h=28
+~ cond=2 wire=phaseconductor units=ft x=-1.5 h=28
+~ cond=3 wire=phaseconductor units=ft x=3 h=28
+~ cond=4 wire=neutralconductor units=ft x=0 h=24
+
+
+new line.Line650_632 geometry=FourWire length=2000 units=ft 
+~ bus1=SourceBus bus2=Bus632
+new line.Line646_645 geometry=FourWire length=300 units=ft 
+~ bus1=Bus646 bus2=Bus645
+new line.Line645_632 geometry=FourWire length=500 units=ft 
+~ bus1=Bus645 bus2=Bus632
+new line.Line632_633 geometry=FourWire length=500 units=ft 
+~ bus1=Bus632 bus2=Bus633
+new line.Line632_671 geometry=FourWire length=2000 units=ft 
+~ bus1=Bus632 bus2=Bus671
+new line.Line611_684 geometry=FourWire length=300 units=ft 
+~ bus1=Bus611 bus2=Bus684
+new line.Line684_671 geometry=FourWire length=300 units=ft 
+~ bus1=Bus684 bus2=Bus671
+new line.Line684_652 geometry=FourWire length=800 units=ft 
+~ bus1=Bus684 bus2=Bus652
+new line.Line671_680 geometry=FourWire length=1000 units=ft 
+~ bus1=Bus671 bus2=Bus680
+new line.Line671_692 geometry=FourWire length=0 units=ft 
+~ bus1=Bus671 bus2=Bus692
+new line.Line692_675 geometry=FourWire length=500 units=ft 
+~ bus1=Bus692 bus2=Bus675
+
+
+ new transformer.T1 xhl=2
+~ wdg=1 bus=Bus633 conn=wye kV=4.16 kVA=500 %r=0.55
+~ wdg=2 bus=Bus634 conn=wye kV=0.48 kVA=500 %r=0.55
+
+
+new load.Load1 phases=3 bus1=Bus4 conn=wye kV=4.16 
+~ kW=5400 pf=0.9 model=1 vminpu=0.75
+
+set voltagebases=[12.47, 4.16] 
+calcvoltagebases
+solve
+
+Show Voltage LL Nodes
+Show Voltages LN Nodes 
+Show Currents resid=yes elements
+Show Powers kva Elements

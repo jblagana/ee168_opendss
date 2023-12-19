@@ -1,0 +1,37 @@
+clear
+new circuit.IEEE4BusDYBalanced basekV=12.47 phases=3
+~ MVAsc3 = 250000 250000
+
+new wiredata.phaseconductor Runits=mi Rac=0.306
+~ GMRunits=ft GMRac=0.0244 Radunits=in Diam=0.721
+
+new wiredata.neutralconductor Runits=mi Rac=0.592
+~ GMRunits=ft GMRac=0.00814 Radunits=in Diam=0.563
+
+new linegeometry.FourWire nconds=4 nphases=3 reduce=yes 
+~ cond=1 wire=phaseconductor units=ft x=-4 h=28
+~ cond=2 wire=phaseconductor units=ft x=-1.5 h=28
+~ cond=3 wire=phaseconductor units=ft x=3 h=28
+~ cond=4 wire=neutralconductor units=ft x=0 h=24
+
+new line.Line1_2 geometry=FourWire length=2000 units=ft 
+~ bus1=SourceBus bus2=Bus2
+
+ new transformer.T1 xhl=6
+~ wdg=1 bus=Bus2 conn=delta kV=12.47 kVA=6000 %r=0.5
+~ wdg=2 bus=Bus3 conn=wye kV=4.16 kVA=6000 %r=0.5
+
+new line.Line3_4 geometry=FourWire length=2500 units=ft 
+~ bus1=Bus3 bus2=Bus4
+
+new load.Load1 phases=3 bus1=Bus4 conn=wye kV=4.16 
+~ kW=5400 pf=0.9 model=1 vminpu=0.75
+
+set voltagebases=[12.47, 4.16] 
+calcvoltagebases
+solve
+
+Show Voltage LL Nodes
+Show Voltages LN Nodes 
+Show Currents resid=yes elements
+Show Powers kva Elements
