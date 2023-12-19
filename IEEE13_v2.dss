@@ -84,7 +84,7 @@ new line.Line632_633 geometry=config602 length=500 units=ft
 new line.Line645_646 geometry=config603 length=300 units=ft
 ~ bus1=Bus645 bus2=Bus646
 new line.Line650_632 geometry=config601 length=2000 units=ft
-~ bus1=Bus650 bus2=Bus632
+~ bus1=SourceBus bus2=Bus632
 ! new line.Line684_652 geometry=config607 length=800 units=ft
 ! ~ bus1=Bus684 bus2=Bus652
 new line.Line632_671 geometry=config601 length=2000 units=ft
