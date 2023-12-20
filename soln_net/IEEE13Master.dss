@@ -1,0 +1,23 @@
+! Annotated Master file for the IEEE 13-bus test case.
+!
+! This file is meant to be invoked from the Compile command in the "Run_IEEE123Bus.DSS"  file.
+! 
+! Note: DSS commands, property names, etc., are NOT case sensitive. Capitalize as you please.
+! You should always do a "Clear" before making a new circuit:
+
+Clear
+
+
+New Circuit.IEEE13Master ! Name of the file IEEE13Master
+~ basekv=115 pu=1.0001 phases=3 bus1=SourceBus
+~ Angle=30 MVAsc3=20000 MVASC1=21000   ! to make an infinite source
+Redirect IEEE13Transformers.dss
+Redirect IEEE13Regulators.dss
+Redirect IEEE13Lines.dss
+Redirect IEEE13Loads.dss
+Redirect IEEE13Capacitors.dss
+
+
+
+Set VoltageBases = [115, 4.16, 0.480, 0.40]    ! ARRAY OF VOLTAGES IN KV
+CalcVoltageBases  ! PERFORMS ZERO LOAD POWER FLOW TO ESTIMATE VOLTAGE BASES

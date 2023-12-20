@@ -1,0 +1,56 @@
+
+New Transformer.Sub Phases=3 Windings=2 XHL=(8 1000 /) 
+~ wdg=1 bus=SourceBus conn=delta kv=115 kva=5000 %r=(.5 1000 /) XHT=4 
+~ wdg=2 bus=650       conn=wye   kv=4.16 kva=5000 %r=(.5 1000 /)    XLT=4
+
+! TRANSFORMER DEFINITONS
+New Transformer.XFM1 Phases=3 Windings=2 XHL=2     !buses=(633,634) conns=(wye,wye) kvs=(4.16,0.480) kvas=(500,500) r=(0.0055,0.0055) XLT=1 XHT=1   
+~ wdg=1 bus=633 conn=Wye kv=4.16 kva=500 %r=.55 XHT=1
+~ wdg=2 bus=634 conn=Wye kv=0.480 kva=500 %r=.55 XLT=1
+
+
+New Transformer.T646 Phases=1 Windings=3     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=646.2.3         conn=delta kv=4.16  kva=500 %r=(.5 1000 /)     
+~ wdg=2 bus=646EV.2.0     conn=wye kv=0.230  kva=250 %r=(.5 1000 /)    
+~ wdg=3 bus=646EV.0.3     conn=wye kv= 0.230 kva=250  %r=(.5 1000 /)    
+
+New Transformer.T645 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=645.2         conn=wye kv=2.4  kva=300 %r=(.5 1000 /)     
+~ wdg=2 bus=645EV.2     conn=wye kv=0.230  kva=300 %r=(.5 1000 /)    
+  
+New Transformer.T611 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=611.3         conn=wye kv=2.4  kva=200 %r=(.5 1000 /)     
+~ wdg=2 bus=611EV.3     conn=wye kv=0.230  kva=200 %r=(.5 1000 /)
+
+New Transformer.T652 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=652.1         conn=wye kv=2.4  kva=200 %r=(.5 1000 /)     
+~ wdg=2 bus=652EV.1     conn=wye kv=0.230  kva=200 %r=(.5 1000 /)  
+
+New Transformer.T671 Phases=3 Windings=2 XHL=(1 1000 /) 
+~ wdg=1 bus=671           conn=delta kv=4.16 kva=1500 %r=(.5 1000 /) XHT=4 
+~ wdg=2 bus=671EV       conn=wye   kv=0.40 kva=1500 %r=(.5 1000 /)    XLT=4
+
+New Transformer.T675 Phases=3 Windings=2 XHL=(1 1000 /) 
+~ wdg=1 bus=675           conn=delta   kv=4.16 kva=1000 %r=(.5 1000 /) XHT=4 
+~ wdg=2 bus=675EV       conn=wye    kv=0.40 kva=1000 %r=(.5 1000 /)    XLT=4
+
+New Transformer.T692 Phases=1 Windings=3     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=692.3.1         conn=delta kv=4.16  kva=250 %r=(.5 1000 /)     
+~ wdg=2 bus=692EV.3.0     conn=wye kv=0.230  kva=125 %r=(.5 1000 /)    
+~ wdg=3 bus=692EV.0.1     conn=wye kv= 0.230 kva=125  %r=(.5 1000 /) 
+
+New Transformer.T670 Phases=3 Windings=2 XHL=(1 1000 /) 
+~ wdg=1 bus=670          conn=delta kv=4.16 kva=300 %r=(.5 1000 /) XHT=4 
+~ wdg=2 bus=670EV       conn=wye   kv=0.40 kva=300 %r=(.5 1000 /)    XLT=4
+
+New Transformer.T632 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=632.1         conn=wye kv=2.4  kva=200 %r=(.5 1000 /)     
+~ wdg=2 bus=632EV.1     conn=wye kv=0.230  kva=200 %r=(.5 1000 /)
+
+New Transformer.T680 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=680.1         conn=wye kv=2.4  kva=200 %r=(.5 1000 /)     
+~ wdg=2 bus=680EV.1     conn=wye kv=0.230  kva=200 %r=(.5 1000 /)
+
+New Transformer.T684 Phases=1 Windings=2     XHL=1 XHT=0.5 XLT=0.5
+~ wdg=1 bus=684.1         conn=wye kv=2.4  kva=200 %r=(.5 1000 /)     
+~ wdg=2 bus=684EV.1     conn=wye kv=0.230  kva=200 %r=(.5 1000 /)

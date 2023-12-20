@@ -1,0 +1,20 @@
+! Electric Vehicle Penetration 
+
+New XYCurve.Eff npts=4 xarray=[.1 .2 .4 1.0]  yarray=[.86 .9 .93 .97]
+New Storage.Storage634 phases=3 bus1=634 kv=0.48 pf=1 kWrated=490 effcurve=Eff kWhrated=1960 %stored=0 model=1 state=charging  
+New Storage.Storage671 phases=3 bus1=671EV kv=0.4 pf=1 kWrated=1330 effcurve=Eff kWhrated=5320 %stored=0 model=1 state=charging
+New Storage.Storage675 phases=3 bus1=675EV kv=0.4 pf=1 kWrated=970 effcurve=Eff kWhrated=3880 %stored=0 model=1 state=charging
+New Storage.Storage670 phases=3 bus1=670EV kv=0.4 pf=1 kWrated=200 effcurve=Eff kWhrated=800 %stored=0 model=1 state=charging
+
+
+New Storage.Storage646 phases=1 bus1=646EV.2.3 kv=0.230 pf=1 kWrated=231 effcurve=Eff kWhrated=2800 %stored=0 model=1 state=charging
+New Storage.Storage645 phases=1 bus1=645EV.2 kv=0.230 pf=1 kWrated=217.8 effcurve=Eff kWhrated=2640 %stored=0 model=1 state=charging
+New Storage.Storage692 phases=1 bus1=692EV.3.1 kv=0.230 pf=1 kWrated=198 effcurve=Eff kWhrated=2400 %stored=0 model=1 state=charging
+New Storage.Storage611 phases=1 bus1=611EV.3 kv=0.230 pf=1 kWrated=198 effcurve=Eff kWhrated=2400 %stored=0 model=1 state=charging
+New Storage.Storage652 phases=1 bus1=652EV.1 kv=0.230 pf=1 kWrated=151.8 effcurve=Eff kWhrated=1840 %stored=0 model=1 state=charging
+
+
+!New StorageController.SC element=Line.650632 terminal=1 
+!~ ModeCharge=PeakShaveLow  kWTargetLow=1500
+!~ eventlog= yes
+

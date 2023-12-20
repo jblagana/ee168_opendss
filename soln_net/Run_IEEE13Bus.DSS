@@ -1,0 +1,38 @@
+
+clear
+Compile (IEEE13Master.dss)
+!Redirect Storage_IEEE13.dss
+!Storage.Storage1.Bus=64
+! 'Compile' differs from "redirect" in that it changes the default directory 
+! to the one in which the referenced file is located.
+! 'Redirect' returns to the directory from which it was invoked.
+
+! After compiling, the next series of script commands modify to the regulator control definitions to
+! limit the maximum tap change to 1 per solution control iteration. In most cases, this will 
+! allow the standard DSS solution algorithm to better represent an actual control.
+! Note the time delay is also chnaged. This forces the regulator at the head of the feeder to move first.
+
+RegControl.Reg1.maxtapchange=1  Delay=15  !Allow only one tap change per solution. 
+RegControl.Reg2.maxtapchange=1  Delay=30  !Allow only one tap change per solution
+RegControl.Reg3.maxtapchange=1  Delay=30  !Allow only one tap change per solution
+
+Set MaxControlIter=100
+
+New EnergyMeter.Feeder Line.650632
+
+
+solve
+BusCoords IEEE13Node_BusXY.csv
+!Monitor.SS.action=take
+!Show Monitor SS
+!Export Monitors SS
+! Show some selected results
+
+Plot Profile
+plot profile phases=all
+
+Show Voltage LN Nodes     ! this shows the voltages by node, Line-to-Neutral voltage.
+Show Currents Elements    ! this produces a report of the currents, element-by-element.
+Show Powers kva Elements  ! This produces a report of the powers, in kVA, element-by-element
+Show taps                 ! shows the present regulator taps
+
